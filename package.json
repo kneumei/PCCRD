@@ -1,20 +1,22 @@
 {
   "name": "PCCRD",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Pulaski County Compassion Resource Directory",
-  "main": "server.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+  "private": true,
   "author": "Kyle Neumeier (kneumei@gmail.com)",
   "license": "BSD-2-Clause",
   "devDependencies": {
-    "grunt": "~0.4.2"
+    "protractor": ">=0.8.0",
+    "jasmine-given": "~2.1.0",
+    "grunt": "~0.4.1",
+    "lineman": "~0.24.1",
+    "lineman-angular": ">= 0.1.1",
+    "coffee-script": "~1.6.3",
+    "bower": "~1.2.8",
+    "lineman-bower": "0.0.3"
   },
-  "dependencies": {
-    "express": "~3.4.7",
-    "mongoose": "~3.8.2",
-    "jade": "~0.35.0",
-    "connect": "~2.12.0"
+  "engines": {
+    "node": "~>0.10.5",
+    "npm": "~>1.2.18"
   }
 }

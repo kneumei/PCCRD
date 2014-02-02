@@ -1,0 +1,24 @@
+{
+  "name": "angular-test-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/davemo/lineman-angular-template",
+  "authors": [
+    "Kyle Neumeier <kneumei@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "/vendor/bower",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.10",
+    "angular-resource": "~1.2.10",
+    "bootstrap": "~3.1.0",
+    "angular-route": "~1.2.10",
+    "lodash": "~2.4.1"
+  }
+}

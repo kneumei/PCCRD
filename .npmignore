@@ -5,7 +5,3 @@
 
 /dist
 /generated
-
-/vendor/bower
-
-*.*~
