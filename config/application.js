@@ -7,7 +7,7 @@
 
 module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application', {
 	ngtemplates:{
-		app:{
+		pccrd:{
 			options:{
 				base:"app/js/views"
 			},
@@ -18,7 +18,7 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('application
 
 	watch:{
 		ngtemplates:{
-			files:"app/js/views/*.html"
+			files:"app/js/views/**/*.html"
 		}
 	}
 });

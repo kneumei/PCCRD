@@ -19,6 +19,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
       "vendor/bower/angular-resource/angular-resource.js",
       "vendor/bower/lodash/lodash.js",
       "vendor/bower/jquery/jquery.js",
+      "vendor/bower/bootstrap/dist/js/bootstrap.js",
+      "vendor/bower/bootstrap/js/collapse.js",
       "vendor/js/**/*.js"
     ],
     app: [
@@ -27,11 +29,10 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
     ]
   },
 
-  less: {
+  css: {
     vendor:[
-    "vendor/css/normalize.css", 
-    "vendor/css/**/*.css",
-    "vendor/bower/bootstrap/less/bootstrap.less"
+    "vendor/bower/bootstrap/dist/css/bootstrap.css",
+    "vendor/bower/bootstrap/dist/css/bootstrap-theme.css"
     ]
   }
 });
