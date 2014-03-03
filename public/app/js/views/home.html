@@ -1,0 +1,12 @@
+<table class="table table-striped table-hover">
+	<thead>
+		<th>Organization</th>
+		<th>Services</th>
+	</thead>
+	<tbody>
+		<tr ng-repeat="org in organizations" ng-click="navigate(org)">
+			<td>{{org.name}}</td>
+			<td>{{org.services}}</td>
+		</tr>
+	</tbody>
+</table>

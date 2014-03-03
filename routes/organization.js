@@ -1,9 +1,12 @@
 var MongoClient = require('mongodb').MongoClient
 	,Server = require('mongodb').Server
+	,config = require('../config/mongo.db.test.js')
 
-var conStr = "mongodb://pccrd:sufficientgrounds@ds033449.mongolab.com:33449/pccrd"
+var conStr = "mongodb://"+config.user+":"+config.pass+"@"+config.server+":"+config.port+"/pccrd"
 var db;
 var orgColl;
+
+console.log(conStr);
 
 MongoClient.connect(conStr, function(err, database){
 	
@@ -25,10 +28,14 @@ exports.findAll = function(req, res){
 	});
 };
 
-exports.findById = function(req,res){
-	
-	collection.find({id:req.params.Id}).toArray(function(err, item){
-		res.send(item);
+exports.findBySlug = function(req,res){
+	orgColl.findOne({slug:req.params.slug}, function(err, item){
+		if(err || !item){
+			res.status(404).send();
+		}else{
+			res.send(item);	
+		}
+		
 	});
 }
 

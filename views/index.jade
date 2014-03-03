@@ -1,0 +1,15 @@
+doctype html
+html(lang="en")
+	
+	head 
+		title="Pulaski County Compassion Resource Directory"
+		link(href="/public/build/bootstrap.css", rel="stylesheet", type="text/html", media="all")
+	
+	body(id="ng-app", ng-app="pccrd" ng-controller="AppController")
+		div(prd-navigation-panel)
+		div(class="col-md-8")
+			div(ng-view)
+
+		script(src="/public/build/framework.js")
+		script(src="/public/build/app.js")
+		script(src="/public/build/templates.js")
