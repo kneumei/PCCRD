@@ -4,7 +4,7 @@
 /node_modules
 
 public/build
-public/vender/bower
+public/vendor/bower
 
 config/*
 !/config/*example.js
