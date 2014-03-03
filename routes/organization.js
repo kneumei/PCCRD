@@ -23,9 +23,23 @@ MongoClient.connect(conStr, function(err, database){
 
 
 exports.findAll = function(req, res){
-	orgColl.find().toArray(function(err, items){
-		res.send(items);
-	});
+	orgColl.aggregate([
+		{$unwind: "$locations"},
+		{$unwind: "$locations.services"},
+		{$group:{_id: 
+			{ slug: "$slug", name: "$name"},
+			services: {$addToSet: "$locations.services"}}
+		},
+		{$project: { 
+			_id: 0,
+			slug: "$_id.slug",
+			name: "$_id.name",
+			services: 1
+		}}
+		], function(err, result){
+			res.send(result);
+		});
+
 };
 
 exports.findBySlug = function(req,res){

@@ -1,17 +1,15 @@
 angular.module('pccrd')
-	.controller('HomeController',['$scope', '$location', function($scope, $location){
-		$scope.organizations = [
-			{
-				name:"ABC",
-				services:["homeless", "food"],
-				slug:"ABC"
-			},
-			{
-				name:"DEF",
-				services:["shelter"],
-				slug:"DEF"
-			}
-		];
+	.controller('HomeController',['$scope', '$location','Organization', function($scope, $location, Organizations){
+		$scope.organizations = [];
+
+		Organizations.query(function(organizations){
+			angular.forEach(organizations, function(organization){
+				$scope.organizations.push(organization);
+			})
+		}, function(){
+
+		})
+
 
 		$scope.navigate = function(organization){
 			$location.path('/organizations/'+organization.slug)
