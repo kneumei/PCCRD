@@ -20,5 +20,6 @@ app.get('*', function(req, res){
 	res.render('index');
 });
 
-app.listen(3000);
-console.log("Listening on 3000")
+var port = process.env.PORT 
+app.listen(port);
+console.log("Listening on " + port)
