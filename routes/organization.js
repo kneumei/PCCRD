@@ -1,8 +1,7 @@
 var MongoClient = require('mongodb').MongoClient
 	,Server = require('mongodb').Server
-	,config = require('../config/mongo.db.test.js')
 
-var conStr = "mongodb://"+config.user+":"+config.pass+"@"+config.server+":"+config.port+"/pccrd"
+var conStr = process.env.MONGOLAB_URI
 var db;
 var orgColl;
 

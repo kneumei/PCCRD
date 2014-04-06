@@ -10,3 +10,5 @@ config/*
 !/config/*example.js
 
 *.*~
+
+setEnvVar.sh
