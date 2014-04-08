@@ -4,11 +4,14 @@ angular.module('pccrd')
 
 		Organizations.query(function(organizations){
 			angular.forEach(organizations, function(organization){
-				$scope.organizations.push(organization);
+				var model = {
+					slug: organization.slug,
+					name: organization.name,
+					services: _.uniq(_.pluck(organization.services, "type"))
+				}
+				$scope.organizations.push(model);
 			})
-		}, function(){
-
-		})
+		});
 
 
 		$scope.navigate = function(organization){

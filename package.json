@@ -5,9 +5,7 @@
   "private": true,
   "author": "Kyle Neumeier (kneumei@gmail.com)",
   "license": "BSD-2-Clause",
-  "devDependencies": {
-
-  },
+  "devDependencies": {},
   "engines": {
     "node": "~>0.10.5",
     "npm": "~>1.2.18"
@@ -22,6 +20,8 @@
     "grunt-contrib-concat": "^0.3.0",
     "grunt-contrib-cssmin": "^0.9.0",
     "grunt-angular-templates": "^0.5.3",
-    "grunt-cli": "^0.1.13"
+    "grunt-cli": "^0.1.13",
+    "lodash-node": "^2.4.1",
+    "mongoose": "^3.8.8"
   }
 }

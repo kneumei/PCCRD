@@ -22,6 +22,7 @@ module.exports = function(grunt) {
       framework:{
         src:[
           'public/vendor/bower/jquery/jquery/dist/jquery.js',
+          'public/vendor/bower/lodash/dist/lodash.js',
           'public/vendor/bower/angular/angular.js',
           'public/vendor/bower/angular-resource/angular-resource.js',
           'public/vendor/bower/angular-route/angular-route.js',
