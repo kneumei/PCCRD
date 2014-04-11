@@ -5,7 +5,7 @@ module.exports = function(grunt) {
   	watch:{
   		css:{
         options:{livereload:true},
-  			files:['public/app/css/**/*.css'],
+  			files:['public/app/content/css/**/*.css', 'public/build/css/bootstrap.css'],
   			tasks:['cssmin']
   		},
   		js:{
@@ -16,6 +16,10 @@ module.exports = function(grunt) {
       templates:{
         files:['public/app/js/directives/**/*.html', 'public/app/js/views/**/*.html'],
         tasks: ['ngtemplates:directives']
+      },
+      less:{
+        files:['public/app/content/less/*.less'],
+        tasks:['less:bootstrap']
       }
   	},
     concat:{
@@ -34,15 +38,28 @@ module.exports = function(grunt) {
         dest:'public/build/app.js'
       }
     },
+
+    less:{
+      bootstrap:{
+        files:{
+          'public/build/css/bootstrap.css':'public/app/content/less/site.less'
+        }
+      }
+    },
+
+    copy:{
+      fonts:{
+        files:[
+          {expand:true, cwd:'public/vendor/bower/bootstrap/fonts/', dest:'public/build/fonts/', src: '*'}
+        ]
+      }
+    },
+
     cssmin:{
       combine:{
         files:{
-          'public/build/site.css':[
-            'public/app/css/**/*.css'
-          ],
-          'public/build/bootstrap.css':[
-            'public/vendor/bower/bootstrap/dist/css/bootstrap.css',
-            'public/vendor/bower/bootstrap/dist/css/bootstrap-theme.css'
+          'public/build/css/site.css':[
+            'public/build/css/*.css'
           ]
         }
       }
@@ -58,12 +75,15 @@ module.exports = function(grunt) {
       }
     }
   });
+  
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-less')
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-concat');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-angular-templates');
 
   grunt.registerTask('default', ['watch']);
-  grunt.registerTask('build', ['ngtemplates','concat', 'cssmin']);
+  grunt.registerTask('build', ['ngtemplates','concat', 'less:bootstrap','cssmin', 'copy:fonts']);
   grunt.registerTask('heroku', ['ngtemplates','concat', 'cssmin']);
 };

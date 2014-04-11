@@ -6,16 +6,27 @@
 	</div>
 
 	<div class="panel-content">
-
 		{{organization.comment}}
+	</div>
 
-		<div ng-repeat="location in organization.locations">
-			<div class="panel">
-				<div class="panelHeading">
-					<h3>{{location}}</h3>
+</div>
+
+<div class="row col-md-8">
+	<div ng-repeat="service in organization.services">
+		<div class="panel panel-default">
+			<div class="panel-heading">
+				<span class="glyphicon glyphicon-search"></span>
+				<h3>{{service.type}}</h3>
+				<h4>{{service.description}}</h4>
+			</div>
+			<div class="panel-body">
+				<div ng-repeat="location in service.locations">
+					<div class="row col-md-4">
+						<div class="panel panel-"
+					</div>
 				</div>
 			</div>
 		</div>
-
 	</div>
 </div>
+
