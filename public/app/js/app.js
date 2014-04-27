@@ -1,4 +1,4 @@
-angular.module("pccrd", ["ngResource", "ngRoute"]).run(function($rootScope) {
+angular.module("pccrd", ["ngResource", "ngRoute", 'ui.bootstrap']).run(function($rootScope) {
 	//app-configuration goes here
 });
 

@@ -15,14 +15,23 @@
 	<div ng-repeat="service in organization.services">
 		<div class="panel panel-default">
 			<div class="panel-heading">
-				<span class="glyphicon glyphicon-search"></span>
-				<h3>{{service.type}}</h3>
-				<h4>{{service.description}}</h4>
+				<div class="row">
+					<div class="col-md-2">
+						<span class="fa fa-cutlery fa-4x"></span>
+					</div>
+					<div class="col-md-8">
+						<h3>{{service.type}}</h3>
+						<h4>{{service.description}}</h4>
+					</div>
+					<div class="col-md-2 pull-right">
+						<button class="btn btn-default" popover-placement='right' popover='add new location!'>Add</button>
+					</div>
+				</div>
 			</div>
 			<div class="panel-body">
 				<div ng-repeat="location in service.locations">
-					<div class="row col-md-4">
-						<div class="panel panel-"
+					<div class="col-md-4 tile">
+						<location data='location'/>
 					</div>
 				</div>
 			</div>

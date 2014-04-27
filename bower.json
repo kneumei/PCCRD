@@ -17,8 +17,10 @@
   "dependencies": {
     "angular": "~1.2.10",
     "angular-resource": "~1.2.10",
-    "bootstrap": "~3.1.0",
     "angular-route": "~1.2.10",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "font-awesome": "~4.0.3",
+    "bootstrap-bower": "~3.0.0",
+    "angular-bootstrap": "~0.10.0"
   }
 }
