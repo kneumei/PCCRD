@@ -1,5 +1,5 @@
 angular.module('pccrd')
-	.controller('HomeController',['$scope', '$location','Organization', function($scope, $location, Organizations){
+	.controller('HomeCtrl',['$scope', '$location','Organization', function($scope, $location, Organizations){
 		$scope.organizations = [];
 
 		Organizations.query(function(organizations){

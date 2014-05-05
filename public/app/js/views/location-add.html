@@ -1,0 +1,49 @@
+<div class="panel panel-default">
+	<div class="panel-heading">
+		Add a new Location
+	</div>
+	<div class='panel-body'>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="Name">Name</label>
+			</div>
+			<div class="col-md-8">
+				<span class="pull-left"> <input ng-model='location.name' id="Name" name="Name" typeahead="location.name for location in locations" typeahead-editable='true' typeahead-on-select="onNameSelect()"/></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="street">Street</label>
+			</div>
+			<div class="col-md-8">
+				<span class="pull-left"> <input ng-model='location.street' id="street" name="Street"/></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="city">City</label>
+			</div>
+			<div class="col-md-8">
+				<span class="pull-left"> <input ng-model='location.city' id="city" name="City"/></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="state">State</label>
+			</div>
+			<div class="col-md-8">
+				<span class="pull-left"> <input ng-model='location.state' id="state" name="state"/></span>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-4">
+				<label for="zipcode">Zip Code</label>
+			</div>
+			<div class="col-md-8">
+				<span class="pull-left"> <input ng-model='location.zipcode' id="zipcode" name="zipcode"/></span>
+			</div>
+		</div>
+		<button class='btn btn-default' ng-click="save()">save</button>
+		<button class='btn btn-default' ng-click="cancel()">cancel</button>
+	</div>
+</div>

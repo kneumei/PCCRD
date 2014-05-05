@@ -32,6 +32,9 @@ app.get('/api/organizations', organizations.findAll(mongoose.model("organization
 
 app.get('/api/organizations/:slug', organizations.findBySlug(mongoose.model("organizations")));
 
+app.put('/api/organizations/:slug', 
+	organizations.updateOrganization(mongoose.model("organizations"), mongoose.model("locations")));
+
 app.get('*', function(req, res){
 	res.render('index');
 });

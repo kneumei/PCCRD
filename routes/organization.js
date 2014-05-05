@@ -26,14 +26,15 @@ exports.findBySlug = function(Organization){
 	}
 }
 
-exports.addOrganization =  function(db){
+exports.updateOrganization = function(Organization){
 	return function(req, res){
-		var organization = req.body;
-		db.collection('organizations').insert(organization, {safe:true}, function(err, result){
+		console.log("here!")
+			console.log(req.body)
+		Organization.update(req.body, {upsert: true}, function(err){
 			if(err){
-				res.send({'error': 'an error has occurred'});
+				res.status(500).send("could not insert");
 			}else{
-				res.send(result[0]);
+				res.send(202)
 			}
 		});
 	}

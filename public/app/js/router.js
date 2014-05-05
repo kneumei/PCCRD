@@ -4,6 +4,6 @@ angular.module("pccrd")
   $locationProvider.html5Mode(true);
 
   $routeProvider
-  	.when('/', {templateUrl: 'public/app/js/views/home.html', controller:'HomeController'})
-  	.when('/organizations/:id', { templateUrl: 'public/app/js/views/organization-view.html', controller: 'OrganizationController'})
+  	.when('/', {templateUrl: 'public/app/js/views/home.html', controller:'HomeCtrl'})
+  	.when('/organizations/:id', { templateUrl: 'public/app/js/views/organization-view.html', controller: 'OrganizationCtrl'})
 }]);
