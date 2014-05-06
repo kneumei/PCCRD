@@ -15,8 +15,10 @@ angular.module('pccrd').controller('LocationAddCtrl', ['$scope', '$modalInstance
 			var service = _.find($scope.organization.services, function(org){return org.type = $scope.service});
 			service.locations.push($scope.location);
 			$scope.organization.$update(function(){
-				console.log("success")
+				console.log("success");
+				$modalInstance.close();
 			}, function(){
+				$modalInstance.close();
 				console.log("error")
 			});
 		}

@@ -1,8 +1,8 @@
 angular.module('pccrd')
-	.controller('HomeCtrl',['$scope', '$location','Organization', function($scope, $location, Organizations){
+	.controller('HomeCtrl',['$scope', '$location','dataCache', function($scope, $location, dataCache){
 		$scope.organizations = [];
 
-		Organizations.query(function(organizations){
+		dataCache.getOrganizations().then(function(organizations){
 			angular.forEach(organizations, function(organization){
 				var model = {
 					slug: organization.slug,
@@ -12,7 +12,6 @@ angular.module('pccrd')
 				$scope.organizations.push(model);
 			})
 		});
-
 
 		$scope.navigate = function(organization){
 			$location.path('/organizations/'+organization.slug)

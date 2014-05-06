@@ -1,21 +1,14 @@
-var MongoClient = require('mongodb').MongoClient
-	,Server = require('mongodb').Server
+var _ = require("lodash-node")
 
-var conStr = process.env.MONGOLAB_URI
-var db;
-var Locations;
 
-exports.findById = function(req, res){
-
-}
-
-exports.addLocation = function(req, res){
-	var location = req.body;
-	Locations.insert(location, {safe:true}, function(err, result){
-		if(err){
-			res.send({'error': 'could not insert location'});
-		}else {
-			res.send(result[0]);
-		}
-	});
-}
+exports.findAll = function(Locations){
+	return function(req, res){
+		Locations.find({}, function(err, locations){
+			if(err || !locations){
+				res.status(404).send("not found");
+			}else{
+				res.send(locations);
+			}
+		});
+	};
+};

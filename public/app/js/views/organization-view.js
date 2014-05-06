@@ -1,6 +1,6 @@
 angular.module('pccrd')
-.controller('OrganizationCtrl',['$scope', '$routeParams', 'Organization', '$modal',
-	function($scope, $routeParams, Organization, $modal){
+.controller('OrganizationCtrl',['$scope', '$routeParams', 'dataCache', '$modal',
+	function($scope, $routeParams, dataCache, $modal){
 
 
 		$scope.addLocation = function(service){
@@ -16,11 +16,11 @@ angular.module('pccrd')
 			});
 		}
 
-		Organization.get({slug:$routeParams.id}, 
+		dataCache.getOrganization($routeParams.id).then( 
 			function(organization){
 				$scope.message = "DONE"
 				$scope.organization = organization
 			}, function(){
 				$scope.message = "FAILED"
-			})
+			});
 	}]);
